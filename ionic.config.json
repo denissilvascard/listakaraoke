@@ -1,0 +1,7 @@
+{
+  "name": "listakaraoke",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
