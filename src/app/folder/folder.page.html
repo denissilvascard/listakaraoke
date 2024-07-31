@@ -7,6 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
+
+
+
+
+
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -15,7 +21,30 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong class="capitalize">{{ folder }} qww</strong>
+    <div *ngIf="folder=='Lista'" >
+
+
+
+
+
+        <ion-list>
+          <ion-item *ngFor="let hero of heroes">
+            <ion-label>{{hero.name}}</ion-label>
+          </ion-item>
+
+        </ion-list>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">Ua Components</a></p>
   </div>
 </ion-content>
