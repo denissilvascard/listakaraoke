@@ -32,10 +32,11 @@
 
 
       <ion-list class="plan-list">
-        <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of heroes">
+        <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of items ; let index = index">
           <ion-grid>
             <ion-row>
               <div class="class-codigo" style="border-right:2px solid #A6A6A6">
+                {{index}} -
                 {{hero.id}}
               </div>
 
@@ -51,7 +52,9 @@
           </ion-grid>
         </ion-item>
       </ion-list>
-
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
     </div>
 
 
