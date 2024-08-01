@@ -27,6 +27,9 @@ export class FolderPage implements OnInit {
     for (let i = 0; i < 50; i++) {
       this.items.push(this.heroes[i]);
     }
+
+    this.items.sort((a,b) => a.musica.localeCompare(b.musica));
+
   }
 
   onIonInfinite(ev) {
