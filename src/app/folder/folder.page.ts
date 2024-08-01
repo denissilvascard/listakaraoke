@@ -26,6 +26,7 @@ export class FolderPage implements OnInit {
   private generateItems() {
     const count = this.heroes.length + 1;
     for (let i = 0; i < 50; i++) {
+      // this.heroes[i].musica = (this.heroes[i].musica.length > 10 ? this.heroes[i].musica.substr(1, 10) : this.heroes[i].musica);
       this.items.push(this.heroes[i]);
     }
 
