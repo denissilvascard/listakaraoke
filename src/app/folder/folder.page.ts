@@ -14,6 +14,7 @@ export class FolderPage implements OnInit {
   private activatedRoute = inject(ActivatedRoute);
   constructor() {}
   items = [];
+  itemsConsulta = [];
   heroes = HEROES;
   selectedHero?: Hero;
 
@@ -29,6 +30,7 @@ export class FolderPage implements OnInit {
     }
 
     this.items.sort((a,b) => a.musica.localeCompare(b.musica));
+    this.consultarMusica();
 
   }
 
@@ -37,6 +39,14 @@ export class FolderPage implements OnInit {
     setTimeout(() => {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 500);
+  }
+
+
+  consultarMusica(){
+        var index = this.items.findIndex(obj => obj.musica === "Azul");
+        this.itemsConsulta.push(this.heroes[index]);
+
+    console.table(this.itemsConsulta)
   }
 
 
