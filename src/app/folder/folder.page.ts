@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import {HEROES} from "../mock-heroes";
 import {Hero} from "../hero";
 import {InfiniteScrollCustomEvent} from "@ionic/angular";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-folder',
@@ -12,6 +13,9 @@ import {InfiniteScrollCustomEvent} from "@ionic/angular";
 export class FolderPage implements OnInit {
   public folder!: string;
   private activatedRoute = inject(ActivatedRoute);
+  buscaNome: string = '';
+
+
   constructor() {}
   items = [];
   itemsConsulta = [];
@@ -25,13 +29,13 @@ export class FolderPage implements OnInit {
 
   private generateItems() {
     const count = this.heroes.length + 1;
-    for (let i = 0; i < 50; i++) {
-      // this.heroes[i].musica = (this.heroes[i].musica.length > 10 ? this.heroes[i].musica.substr(1, 10) : this.heroes[i].musica);
-      this.items.push(this.heroes[i]);
-    }
-
+    // for (let i = 0; i < 50; i++) {
+    //   // this.heroes[i].musica = (this.heroes[i].musica.length > 10 ? this.heroes[i].musica.substr(1, 10) : this.heroes[i].musica);
+    //   this.items.push(this.heroes[i]);
+    // }
+    this.items = this.heroes;
     this.items.sort((a,b) => a.musica.localeCompare(b.musica));
-    this.consultarMusica();
+    // this.consultarMusica();
 
   }
 
@@ -43,12 +47,20 @@ export class FolderPage implements OnInit {
   }
 
 
-  consultarMusica(){
-        var index = this.items.findIndex(obj => obj.musica === "Azul");
-        this.itemsConsulta.push(this.heroes[index]);
+  // consultarMusica(){
+  //       var index = this.items.findIndex(obj => obj.musica === "Azul");
+  //       this.itemsConsulta.push(this.heroes[index]);
+  // }
+  filtrarPessoas(): Hero[] {
 
-    console.table(this.itemsConsulta)
+    if (!this.buscaNome) {
+      return this.items;
+    }
+
+    const buscaNomeLower = this.buscaNome.toLowerCase();
+    return this.items.filter(pessoa =>
+      pessoa.musica.toLowerCase().includes(buscaNomeLower)
+    );
   }
-
 
 }

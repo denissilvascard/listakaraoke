@@ -27,13 +27,14 @@
 
 
 
-
+      <h1>Lista de Pessoas</h1>
+      <input [(ngModel)]="buscaNome" placeholder="Buscar por nome" />
 
 
 
 
       <ion-list class="plan-list">
-        <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of items ; let index = index">
+        <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas()">
           <ion-grid>
             <ion-row>
               <div class="class-codigo" style="border-right:2px solid #A6A6A6">
