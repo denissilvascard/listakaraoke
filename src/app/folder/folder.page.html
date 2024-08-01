@@ -20,14 +20,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+
     <strong class="capitalize">{{ folder }}</strong>
     <div *ngIf="folder=='Lista'">
 
 
 
 
-
+<div style="height: 50px"> --
 
 
 
@@ -40,8 +40,8 @@
               </div>
 
               <div class="class-musica">
-                <div class="class-nome">{{hero.name}}</div>
-                <div class="class-artista">{{hero.name}} artista</div>
+                <div class="class-nome">{{hero.musica}}</div>
+                <div class="class-artista">{{hero.artista}} artista</div>
               </div>
               <div class="plan-right">
                 <div><ion-icon name="musical-notes-sharp"></ion-icon>
@@ -52,12 +52,11 @@
         </ion-item>
       </ion-list>
 
-
+    </div>
 
 
 
 
 
     </div>
-  </div>
 </ion-content>
