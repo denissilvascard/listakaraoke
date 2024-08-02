@@ -32,11 +32,11 @@
 
 
           <ion-list class="hospital_list">
-            <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas()">
+            <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas() ; let index = index">
               <ion-grid>
                 <ion-row>
                   <div class="class-codigo" style="border-right:2px solid #4D8DFF">
-                    <div class="class-titulo-codigo">Código</div>
+                    <div class="class-titulo-codigo">{{index}}</div>
                     <div>{{hero.id}}</div>
 
                   </div>
@@ -53,6 +53,9 @@
               </ion-grid>
             </ion-item>
           </ion-list>
+      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
 
 
 

@@ -20,7 +20,7 @@ export const HEROES: Hero[] = [
   {id: 50004, artista: '14 Bis', musica: 'Linda Juventude'},
   {id: 50005, artista: '14 Bis', musica: 'Planeta Sonho'},
   {id: 50006, artista: '14 Bis', musica: 'Todo Azul Do Mar'},
-  {id: 50007, artista: '14 Bis', musica: 'Uma Velha Canção'},
+    {id: 50007, artista: '14 Bis', musica: 'Uma Velha Canção'},
   {id: 54789, artista: '14 Bis', musica: 'Natural'},
   {id: 54793, artista: '1Kilo', musica: 'Deixe Me Ir'},
   {id: 59464, artista: '2 Pac', musica: 'How Do You Want It'},

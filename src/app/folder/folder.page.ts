@@ -4,6 +4,7 @@ import {HEROES} from "../mock-heroes";
 import {Hero} from "../hero";
 
 import {FormBuilder} from "@angular/forms";
+import {InfiniteScrollCustomEvent} from "@ionic/angular";
 
 @Component({
   selector: 'app-folder',
@@ -24,6 +25,7 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.teste = HEROES.length;
+    console.log("&&&& ",HEROES[1].musica);
     this.generateItems();
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
     if(this.folder=='Lista'){
@@ -31,12 +33,12 @@ export class FolderPage implements OnInit {
     }
   }
 
-  private generateItems() {
-
-    this.items = this.heroes;
-    this.items.sort((a,b) => a.musica.localeCompare(b.musica));
-
-  }
+  // private generateItems() {
+  //
+  //   this.items = this.heroes;
+  //   this.items.sort((a,b) => a.musica.localeCompare(b.musica));
+  //
+  // }
 
 
   filtrarPessoas(): Hero[] {
@@ -72,5 +74,24 @@ export class FolderPage implements OnInit {
 
     return itemsGeral;
   }
+
+  private generateItems() {
+    const count = HEROES.length + 1;
+    for (let i = 0; i < HEROES.length; i++) {
+      this.items.push(HEROES[i]);
+    }
+
+    // this.items.sort((a,b) => a.musica.localeCompare(b.musica));
+
+  }
+
+
+  onIonInfinite(ev) {
+    this.generateItems();
+    setTimeout(() => {
+      (ev as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
+  }
+
 
 }
