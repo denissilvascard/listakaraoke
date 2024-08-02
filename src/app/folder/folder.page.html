@@ -27,8 +27,20 @@
 
 
 
-      <ion-searchbar animated="true" placeholder="Buscar" [(ngModel)]="buscaNome" class="custom"></ion-searchbar>
+      <ion-list inset padding>
+        <ion-item>
+          <ion-searchbar animated="true" placeholder="Buscar" [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" class="custom"></ion-searchbar>
+          <ion-button color="primary" (click)="filtr()" class="class-btn-buscar">Buscar</ion-button>
+        </ion-item>
+      </ion-list>
+
+
+
       <ion-note color="primary">{{teste}}</ion-note>
+
+
+
+
 
 
           <ion-list class="hospital_list">

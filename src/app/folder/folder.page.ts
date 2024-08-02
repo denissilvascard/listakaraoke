@@ -15,6 +15,7 @@ export class FolderPage implements OnInit {
   public folder!: string;
   private activatedRoute = inject(ActivatedRoute);
   buscaNome: string = '';
+  campoPesquisa;
   teste;
 
 
@@ -41,8 +42,17 @@ export class FolderPage implements OnInit {
   //   this.items.sort((a,b) => a.musica.localeCompare(b.musica));
   //
   // }
+ filtr(){
+   this.buscaNome = this.campoPesquisa;
+    this.filtrarPessoas();
+ }
 
-
+ clearPesdquisa(){
+    if(this.campoPesquisa.length==0){
+      this.buscaNome ='';
+      this.filtrarPessoas();
+    }
+ }
   filtrarPessoas(): Hero[] {
 
     if (!this.buscaNome) {

@@ -53,7 +53,7 @@ ion-menu-button {
 
 
   .hospital_list {
-    max-height: 600px;
+    max-height: 800px;
     overflow-y: scroll;
   }
 
@@ -74,4 +74,8 @@ ion-searchbar.md.custom {
   --cancel-button-color: #fff;
 }
 
+
+.class-btn-buscar{
+  height: 40px;
+}
 
