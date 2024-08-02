@@ -50,3 +50,9 @@ ion-menu-button {
   color: #51555AFF;
   height: 20px;
 }
+
+
+  .hospital_list {
+    max-height: 600px;
+    overflow-y: scroll;
+  }

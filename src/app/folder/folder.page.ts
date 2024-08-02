@@ -18,9 +18,7 @@ export class FolderPage implements OnInit {
 
   constructor() {}
   items = [];
-  itemsConsulta = [];
   heroes = HEROES;
-  selectedHero?: Hero;
 
   ngOnInit() {
     this.generateItems();
@@ -33,8 +31,6 @@ export class FolderPage implements OnInit {
     this.items.sort((a,b) => a.musica.localeCompare(b.musica));
 
   }
-
-
 
 
   filtrarPessoas(): Hero[] {

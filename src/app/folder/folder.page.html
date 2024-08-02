@@ -32,29 +32,64 @@
 
 
 
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        </ion-card-header>
 
-      <ion-list class="plan-list">
-        <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas()">
-          <ion-grid>
-            <ion-row>
-              <div class="class-codigo" style="border-right:2px solid #A6A6A6">
-                <div class="class-titulo-codigo">Código</div>
-                <div>{{hero.id}}</div>
+        <ion-card-content>
+          <ion-list class="hospital_list" style="border: 2px solid #FFF000;">
+            <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas()">
+              <ion-grid>
+                <ion-row>
+                  <div class="class-codigo" style="border-right:2px solid #A6A6A6">
+                    <div class="class-titulo-codigo">Código</div>
+                    <div>{{hero.id}}</div>
 
-              </div>
+                  </div>
 
-              <div class="class-musica">
-                <div class="class-nome"><ion-icon name="musical-notes-sharp"></ion-icon> {{hero.musica}}</div>
-                <div class="class-artista">Artista: {{hero.artista}}</div>
-              </div>
-<!--              <div class="plan-right">-->
-<!--                <div><ion-icon name="musical-notes-sharp"></ion-icon>-->
-<!--                </div>-->
-<!--              </div>-->
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-      </ion-list>
+                  <div class="class-musica">
+                    <div class="class-nome"><ion-icon name="musical-notes-sharp"></ion-icon> {{hero.musica}}</div>
+                    <div class="class-artista">Artista: {{hero.artista}}</div>
+                  </div>
+                  <!--              <div class="plan-right">-->
+                  <!--                <div><ion-icon name="musical-notes-sharp"></ion-icon>-->
+                  <!--                </div>-->
+                  <!--              </div>-->
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <span class="display-name">ssss</span>
+            <BR>
+            sss
+            <BR>
+           aaaaa
+          </ion-col>
+
+          <ion-col>
+            <button ion-button round >Call</button>
+            <button ion-button round >Directions</button>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+
+
+
+
+
+
 
 
 
