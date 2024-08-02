@@ -36,7 +36,7 @@
 
 
 
-      <ion-note color="primary">{{teste}}</ion-note>
+      <ion-note style="margin-left: 20px; font-size: 12px;" color="primary">{{totalRegistros}} Musíca(s)</ion-note>
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-          <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+          <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" style="padding-top: 20px;">
             <ion-list class="hospital_list">
               <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas() ; let index = index">
                 <ion-grid>

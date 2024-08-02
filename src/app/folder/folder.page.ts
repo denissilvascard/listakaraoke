@@ -17,6 +17,7 @@ export class FolderPage implements OnInit {
   buscaNome: string = '';
   campoPesquisa;
   teste;
+  totalRegistros=0;
 
 
   constructor() {}
@@ -44,13 +45,14 @@ export class FolderPage implements OnInit {
   // }
  filtr(){
    this.buscaNome = this.campoPesquisa;
+   this.removeAcento (this.buscaNome);
     this.filtrarPessoas();
  }
 
  clearPesdquisa(){
     if(this.campoPesquisa.length==0){
       this.buscaNome ='';
-      this.filtrarPessoas();
+      this.generateItems();
     }
  }
   filtrarPessoas(): Hero[] {
@@ -68,7 +70,7 @@ export class FolderPage implements OnInit {
 
     const buscaNomeLower = this.buscaNome.toLowerCase().trim();
     itemsMusica = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
-      musica.musica.toLowerCase().includes(buscaNomeLower)
+      this.removeAcento(musica.musica.toLowerCase()).includes(this.removeAcento(buscaNomeLower))
     );
 
     itemsArtista = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
@@ -83,7 +85,7 @@ export class FolderPage implements OnInit {
     itemsArtista.forEach(a => {
       itemsGeral.push(a)
     });
-
+    this.totalRegistros = itemsGeral.length;
     return itemsGeral;
   }
 
@@ -98,6 +100,7 @@ export class FolderPage implements OnInit {
     this.items = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).splice(this.index, tot);
     this.index +=this.offset;
 
+    this.totalRegistros = HEROES.length;
   }
 
 
@@ -138,4 +141,20 @@ export class FolderPage implements OnInit {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 1500);
   }
+
+
+
+
+  removeAcento (text)  {
+    // var textoOriginal = text;
+    // var textoSemAcento = textoOriginal.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+    var map = { "â": "a", "Â": "A", "à": "a", "À": "A", "á": "a", "Á": "A", "ã": "a", "Ã": "A", "ê": "e", "Ê": "E", "è": "e", "È": "E", "é": "e", "É": "E", "î": "i", "Î": "I", "ì": "i", "Ì": "I", "í": "i", "Í": "I", "õ": "o", "Õ": "O", "ô": "o", "Ô": "O", "ò": "o", "Ò": "O", "ó": "o", "Ó": "O", "ü": "u", "Ü": "U", "û": "u", "Û": "U", "ú": "u", "Ú": "U", "ù": "u", "Ù": "U", "ç": "c", "Ç": "C" };
+
+    return text.replace(/[\W\[\] ]/g, function (a) { return map[a] || a }).toLowerCase()
+
+    // return text;
+  }
+
+
+
 }
