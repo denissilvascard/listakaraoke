@@ -23,27 +23,26 @@
 
 <!--    <strong class="capitalize">{{ folder }}</strong>-->
     <strong class="capitalize"></strong>
-    <div *ngIf="folder=='Lista'">
+    <div *ngIf="folder=='Lista' || folder=='Lista de Musíca'">
 
 
 
       <h1>Lista de Pessoas</h1>
-      <input [(ngModel)]="buscaNome" placeholder="Buscar por nome" />
+
+      <ion-input label="Consultar Musíca" label-placement="floating" fill="outline" placeholder="Buscar" [(ngModel)]="buscaNome" style="width: 80%"></ion-input>
 
 
 
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Card Title</ion-card-title>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        </ion-card-header>
 
-        <ion-card-content>
-          <ion-list class="hospital_list" style="border: 2px solid #FFF000;">
+      <ion-searchbar animated="true" placeholder="Animated" [(ngModel)]="buscaNome"></ion-searchbar>
+
+
+
+          <ion-list class="hospital_list" style="border: 2px solid #4D8DFF;">
             <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas()">
               <ion-grid>
                 <ion-row>
-                  <div class="class-codigo" style="border-right:2px solid #A6A6A6">
+                  <div class="class-codigo" style="border-right:2px solid #4D8DFF">
                     <div class="class-titulo-codigo">Código</div>
                     <div>{{hero.id}}</div>
 
@@ -61,31 +60,6 @@
               </ion-grid>
             </ion-item>
           </ion-list>
-        </ion-card-content>
-      </ion-card>
-
-
-
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <span class="display-name">ssss</span>
-            <BR>
-            sss
-            <BR>
-           aaaaa
-          </ion-col>
-
-          <ion-col>
-            <button ion-button round >Call</button>
-            <button ion-button round >Directions</button>
-          </ion-col>
-        </ion-row>
-
-      </ion-grid>
-
-
-
 
 
 

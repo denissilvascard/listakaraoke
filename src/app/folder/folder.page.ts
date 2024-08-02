@@ -20,9 +20,13 @@ export class FolderPage implements OnInit {
   items = [];
   heroes = HEROES;
 
+
   ngOnInit() {
     this.generateItems();
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    if(this.folder=='Lista'){
+      this.folder = "Lista de Musíca"
+    }
   }
 
   private generateItems() {
