@@ -29,16 +29,13 @@
 
       <h1>Lista de Pessoas</h1>
 
-      <ion-input label="Consultar Musíca" label-placement="floating" fill="outline" placeholder="Buscar" [(ngModel)]="buscaNome" style="width: 80%"></ion-input>
+
+
+      <ion-searchbar animated="true" placeholder="Buscar" [(ngModel)]="buscaNome" class="custom"></ion-searchbar>
 
 
 
-
-      <ion-searchbar animated="true" placeholder="Animated" [(ngModel)]="buscaNome"></ion-searchbar>
-
-
-
-          <ion-list class="hospital_list" style="border: 2px solid #4D8DFF;">
+          <ion-list class="hospital_list">
             <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas()">
               <ion-grid>
                 <ion-row>
