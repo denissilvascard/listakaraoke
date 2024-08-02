@@ -21,7 +21,9 @@ export class FolderPage implements OnInit {
   constructor() {}
   items = [];
   heroes = [];
-
+  itemsPage: any = [];
+  private offset: number = 20;
+  private index: number = 0;
 
   ngOnInit() {
     this.teste = HEROES.length;
@@ -76,22 +78,55 @@ export class FolderPage implements OnInit {
   }
 
   private generateItems() {
-    const count = HEROES.length + 1;
-    for (let i = 0; i < HEROES.length; i++) {
-      this.items.push(HEROES[i]);
-    }
+    console.log("####&&&& "+this.offset)
+    // const count = HEROES.length + 1;
+    // for (let i = 0; i < 20; i++) {
+    //   this.items.push(HEROES[count+i]);
+    // }
 
     // this.items.sort((a,b) => a.musica.localeCompare(b.musica));
+    let tot = this.offset+this.index;
+    this.items = HEROES.splice(this.index, tot);
+    this.index +=this.offset;
 
   }
 
+
+//   onIonInfinite(ev) {
+// console.log("##### ",this.index)
+//
+//
+//         let news = HEROES.splice(this.index, this.offset+this.index);
+//         this.index +=this.offset;
+//
+//       news.forEach(m => {
+//
+//         this.items.push(m);
+//       });
+//
+//
+//
+//
+//
+//
+//     setTimeout(() => {
+//       (ev as InfiniteScrollCustomEvent).target.complete();
+//     }, 500);
+//   }
 
   onIonInfinite(ev) {
-    this.generateItems();
+    // this.generateItems();
+
+        let news = HEROES.splice(this.index, this.offset+this.index);
+        this.index +=this.offset;
+
+      news.forEach(m => {
+
+        this.items.push(m);
+      });
+
     setTimeout(() => {
       (ev as InfiniteScrollCustomEvent).target.complete();
-    }, 500);
+    }, 1500);
   }
-
-
 }
