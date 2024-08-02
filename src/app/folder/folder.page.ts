@@ -14,14 +14,16 @@ export class FolderPage implements OnInit {
   public folder!: string;
   private activatedRoute = inject(ActivatedRoute);
   buscaNome: string = '';
+  teste;
 
 
   constructor() {}
   items = [];
-  heroes = HEROES;
+  heroes = [];
 
 
   ngOnInit() {
+    this.teste = HEROES.length;
     this.generateItems();
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
     if(this.folder=='Lista'){
