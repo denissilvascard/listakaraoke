@@ -57,11 +57,11 @@ export class FolderPage implements OnInit {
     let itemsGeral = [];
 
     const buscaNomeLower = this.buscaNome.toLowerCase();
-    itemsMusica = this.heroes.filter(musica =>
+    itemsMusica = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
       musica.musica.toLowerCase().includes(buscaNomeLower)
     );
 
-    itemsArtista = this.heroes.filter(musica =>
+    itemsArtista = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
       musica.artista.toLowerCase().includes(buscaNomeLower)
     );
 
@@ -78,7 +78,6 @@ export class FolderPage implements OnInit {
   }
 
   private generateItems() {
-    console.log("####&&&& "+this.offset)
     // const count = HEROES.length + 1;
     // for (let i = 0; i < 20; i++) {
     //   this.items.push(HEROES[count+i]);
@@ -86,7 +85,7 @@ export class FolderPage implements OnInit {
 
     // this.items.sort((a,b) => a.musica.localeCompare(b.musica));
     let tot = this.offset+this.index;
-    this.items = HEROES.splice(this.index, tot);
+    this.items = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).splice(this.index, tot);
     this.index +=this.offset;
 
   }
