@@ -42,11 +42,33 @@ export class FolderPage implements OnInit {
     if (!this.buscaNome) {
       return this.items;
     }
+    // const buscaNomeLower = this.buscaNome.toLowerCase();
+    // return this.items.filter(musica =>
+    //   musica.artista.toLowerCase().includes(buscaNomeLower)
+    // );
+    let itemsMusica = [];
+    let itemsArtista = [];
+    let itemsGeral = [];
 
     const buscaNomeLower = this.buscaNome.toLowerCase();
-    return this.items.filter(pessoa =>
-      pessoa.musica.toLowerCase().includes(buscaNomeLower)
+    itemsMusica = this.heroes.filter(musica =>
+      musica.musica.toLowerCase().includes(buscaNomeLower)
     );
+
+    itemsArtista = this.heroes.filter(musica =>
+      musica.artista.toLowerCase().includes(buscaNomeLower)
+    );
+
+    itemsMusica.forEach(m => {
+      console.log(m)
+      itemsGeral.push(m)
+    });
+
+    itemsArtista.forEach(a => {
+      itemsGeral.push(a)
+    });
+
+    return itemsGeral;
   }
 
 }
