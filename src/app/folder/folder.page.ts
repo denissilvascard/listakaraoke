@@ -66,7 +66,7 @@ export class FolderPage implements OnInit {
     let itemsArtista = [];
     let itemsGeral = [];
 
-    const buscaNomeLower = this.buscaNome.toLowerCase();
+    const buscaNomeLower = this.buscaNome.toLowerCase().trim();
     itemsMusica = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
       musica.musica.toLowerCase().includes(buscaNomeLower)
     );
