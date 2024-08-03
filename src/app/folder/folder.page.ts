@@ -16,7 +16,6 @@ export class FolderPage implements OnInit {
   private activatedRoute = inject(ActivatedRoute);
   buscaNome: string = '';
   campoPesquisa;
-  teste;
   totalRegistros=0;
 
 
@@ -28,8 +27,6 @@ export class FolderPage implements OnInit {
   private index: number = 0;
 
   ngOnInit() {
-    this.teste = HEROES.length;
-    console.log("&&&& ",HEROES[1].musica);
     this.generateItems();
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
     if(this.folder=='Lista'){
@@ -37,12 +34,6 @@ export class FolderPage implements OnInit {
     }
   }
 
-  // private generateItems() {
-  //
-  //   this.items = this.heroes;
-  //   this.items.sort((a,b) => a.musica.localeCompare(b.musica));
-  //
-  // }
  filtr(){
    this.buscaNome = this.campoPesquisa;
    this.removeAcento (this.buscaNome);
@@ -60,10 +51,6 @@ export class FolderPage implements OnInit {
     if (!this.buscaNome) {
       return this.items;
     }
-    // const buscaNomeLower = this.buscaNome.toLowerCase();
-    // return this.items.filter(musica =>
-    //   musica.artista.toLowerCase().includes(buscaNomeLower)
-    // );
     let itemsMusica = [];
     let itemsArtista = [];
     let itemsGeral = [];
@@ -74,7 +61,7 @@ export class FolderPage implements OnInit {
     );
 
     itemsArtista = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
-      musica.artista.toLowerCase().includes(buscaNomeLower)
+      this.removeAcento(musica.artista.toLowerCase()).includes(this.removeAcento(buscaNomeLower))
     );
 
     itemsMusica.forEach(m => {
@@ -90,71 +77,26 @@ export class FolderPage implements OnInit {
   }
 
   private generateItems() {
-    // const count = HEROES.length + 1;
-    // for (let i = 0; i < 20; i++) {
-    //   this.items.push(HEROES[count+i]);
-    // }
-
-    // this.items.sort((a,b) => a.musica.localeCompare(b.musica));
+    for (let i = 0; i < 20; i++) {
+      this.items.push(HEROES[+i]);
+    }
     let tot = this.offset+this.index;
-    this.items = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).splice(this.index, tot);
     this.index +=this.offset;
-
     this.totalRegistros = HEROES.length;
   }
 
-
-//   onIonInfinite(ev) {
-// console.log("##### ",this.index)
-//
-//
-//         let news = HEROES.splice(this.index, this.offset+this.index);
-//         this.index +=this.offset;
-//
-//       news.forEach(m => {
-//
-//         this.items.push(m);
-//       });
-//
-//
-//
-//
-//
-//
-//     setTimeout(() => {
-//       (ev as InfiniteScrollCustomEvent).target.complete();
-//     }, 500);
-//   }
-
   onIonInfinite(ev) {
-    // this.generateItems();
-
-        let news = HEROES.splice(this.index, this.offset+this.index);
-        this.index +=this.offset;
-
-      news.forEach(m => {
-
-        this.items.push(m);
-      });
-
+    this.index +=this.offset;
+    for (let i = this.index; i < this.offset+this.index; i++) {
+      this.items.push(HEROES[+i]);
+    }
     setTimeout(() => {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 1500);
   }
 
-
-
-
   removeAcento (text)  {
-    // var textoOriginal = text;
-    // var textoSemAcento = textoOriginal.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     var map = { "â": "a", "Â": "A", "à": "a", "À": "A", "á": "a", "Á": "A", "ã": "a", "Ã": "A", "ê": "e", "Ê": "E", "è": "e", "È": "E", "é": "e", "É": "E", "î": "i", "Î": "I", "ì": "i", "Ì": "I", "í": "i", "Í": "I", "õ": "o", "Õ": "O", "ô": "o", "Ô": "O", "ò": "o", "Ò": "O", "ó": "o", "Ó": "O", "ü": "u", "Ü": "U", "û": "u", "Û": "U", "ú": "u", "Ú": "U", "ù": "u", "Ù": "U", "ç": "c", "Ç": "C" };
-
     return text.replace(/[\W\[\] ]/g, function (a) { return map[a] || a }).toLowerCase()
-
-    // return text;
   }
-
-
-
 }

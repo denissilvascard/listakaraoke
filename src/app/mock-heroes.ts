@@ -33837,7 +33837,7 @@ export const HEROES: Hero[] = [
 {id: 73909, musica: 'Senta Pro Bandidão' , artista: 'Mc Pr Mc Tonny'},
 {id: 73910, musica: 'Preta Do Cabelo Cacheado' , artista: 'Mc Roginho,Th Cdm'},
 {id: 73911, musica: 'Taca Catuaba' , artista: 'Mc Troia'},
-{id: 73912, musica: 'Exaltasamba' , artista: 'Mega Star'},
+{id: 73912, musica: 'Mega Star' , artista: 'Exaltasamba'},
 {id: 73913, musica: 'Bem Bom' , artista: 'Meire Pavão'},
 {id: 73914, musica: 'E Tú Te Vais' , artista: 'Moacyr Franco'},
 {id: 73915, musica: 'Querida' , artista: 'Moacyr Franco'},
