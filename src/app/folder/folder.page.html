@@ -62,7 +62,7 @@
 
 
           <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" style="padding-top: 20px;">
-            <ion-list class="hospital_list">
+            <ion-list [ngClass]="{'hospital_list': totalRegistros > 13, 'hospital_list-min': totalRegistros <= 13}">
               <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas() ; let index = index">
                 <ion-grid>
                   <ion-row>
