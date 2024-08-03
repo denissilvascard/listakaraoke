@@ -92,7 +92,7 @@ export class FolderPage implements OnInit {
     }
     setTimeout(() => {
       (ev as InfiniteScrollCustomEvent).target.complete();
-    }, 1500);
+    }, 0);
   }
 
   removeAcento (text)  {

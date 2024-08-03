@@ -1,9 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" style="width: 50px">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>{{ folder }}
+
+      <ion-list inset padding>
+        <ion-item>
+          <ion-searchbar animated="true" placeholder="Buscar"  [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" class="custom"></ion-searchbar>
+          <ion-button color="primary" (click)="filtr()" class="class-btn-buscar"><ion-icon name="search-outline"></ion-icon></ion-button>
+        </ion-item>
+      </ion-list>
+
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -37,6 +46,13 @@
 
 
       <ion-note style="margin-left: 20px; font-size: 12px;" color="primary">{{totalRegistros}} Musíca(s)</ion-note>
+
+
+
+
+
+
+
 
 
 
