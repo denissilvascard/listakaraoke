@@ -29,6 +29,7 @@ ion-menu-button {
 
 .class-codigo{
   width: 60px;
+  border-right:2px solid #4D8DFF
 }
 
 .class-nome{
@@ -85,8 +86,14 @@ ion-searchbar.md.custom {
   width: 45px;
   height: 40px;
 }
-
-
+.titulo{
+  margin: 20px 46px 30px 20px;
+}
+.label-titulo{
+  color: #4D8DFF;
+  font-size: 25px;
+  font-weight: bold !important;
+}
 
 
 main {

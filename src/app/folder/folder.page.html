@@ -28,7 +28,7 @@
 
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense" style="padding-top: 20px;">
+  <ion-header collapse="condense" style="padding-top: 10px;">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
@@ -41,32 +41,18 @@
 
 
 
-<!--      <ion-list inset padding>-->
-<!--        <ion-item>-->
-<!--          <ion-searchbar animated="true" placeholder="Buscar"  [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" class="custom"></ion-searchbar>-->
-<!--          <ion-button color="primary" (click)="filtr()" class="class-btn-buscar">Buscar</ion-button>-->
-<!--        </ion-item>-->
-<!--      </ion-list>-->
+     <div class="titulo">
+        <ion-label class="label-titulo"> Lista de Musíca</ion-label>
+     </div>
 
 
-
-      <ion-note style="margin-left: 20px; font-size: 12px;" color="primary">{{totalRegistros}} Musíca(s)</ion-note>
-
-
-
-
-
-
-
-
-
-
-          <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" style="padding-top: 20px;">
+          <ion-note style="margin-left: 20px; font-size: 12px;" color="primary">{{totalRegistros}} Musíca(s)</ion-note>
+          <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)" style="padding-top: 0px;">
             <ion-list [ngClass]="{'hospital_list': totalRegistros > 13, 'hospital_list-min': totalRegistros <= 13}">
               <ion-item  class="plan" text-wrap detail-push *ngFor="let hero of filtrarPessoas() ; let index = index">
                 <ion-grid>
                   <ion-row>
-                    <div class="class-codigo" style="border-right:2px solid #4D8DFF">
+                    <div class="class-codigo">
 <!--                      <div class="class-titulo-codigo">{{index+1}}</div>-->
                       <div>{{hero.id}}</div>
 
