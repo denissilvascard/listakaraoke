@@ -81,3 +81,17 @@ ion-searchbar.md.custom {
   height: 40px;
 }
 
+
+
+
+main {
+  display: flex;
+  div {
+    &:first-child {
+      width: 80%;
+    }
+    &:last-child {
+      width: 20%;
+    }
+  }
+}

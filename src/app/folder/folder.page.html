@@ -3,16 +3,21 @@
     <ion-buttons slot="start" style="width: 50px">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}
+<!--    <ion-title>{{ folder }}-->
+<!--    </ion-title>-->
 
-      <ion-list inset padding>
-        <ion-item>
-          <ion-searchbar animated="true" placeholder="Buscar"  [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" class="custom"></ion-searchbar>
-          <ion-button color="primary" (click)="filtr()" class="class-btn-buscar"><ion-icon name="search-outline"></ion-icon></ion-button>
-        </ion-item>
-      </ion-list>
 
-    </ion-title>
+
+    <main>
+      <div>
+        <ion-searchbar animated="true" placeholder="Buscar"  [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" class="custom"></ion-searchbar>
+      </div>
+      <div>
+        <ion-button color="primary" (click)="filtr()" class="class-btn-buscar"><ion-icon name="search-outline"></ion-icon></ion-button>
+      </div>
+    </main>
+
+
   </ion-toolbar>
 </ion-header>
 
@@ -36,12 +41,12 @@
 
 
 
-      <ion-list inset padding>
-        <ion-item>
-          <ion-searchbar animated="true" placeholder="Buscar"  [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" class="custom"></ion-searchbar>
-          <ion-button color="primary" (click)="filtr()" class="class-btn-buscar">Buscar</ion-button>
-        </ion-item>
-      </ion-list>
+<!--      <ion-list inset padding>-->
+<!--        <ion-item>-->
+<!--          <ion-searchbar animated="true" placeholder="Buscar"  [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" class="custom"></ion-searchbar>-->
+<!--          <ion-button color="primary" (click)="filtr()" class="class-btn-buscar">Buscar</ion-button>-->
+<!--        </ion-item>-->
+<!--      </ion-list>-->
 
 
 
