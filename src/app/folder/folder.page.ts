@@ -35,9 +35,11 @@ export class FolderPage implements OnInit {
   }
 
  filtr(){
-   this.buscaNome = this.campoPesquisa;
-   this.removeAcento (this.buscaNome);
-    this.filtrarPessoas();
+    if(this.campoPesquisa.length >2){
+      this.buscaNome = this.campoPesquisa;
+      this.removeAcento (this.buscaNome);
+      this.filtrarPessoas();
+    }
  }
 
  clearPesdquisa(){
