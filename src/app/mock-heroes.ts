@@ -38517,4 +38517,9 @@ export const HEROES: Hero[] = [
 {id: 75029, musica: 'Única Mulher' , artista: 'Anselmo Ralph'},
 {id: 2436, musica: 'Único Caminho' , artista: 'Chris Durán'},
 {id: 1439, musica: 'Único Olhar' , artista: 'Jota Quest'},
+{id: 80019, musica: 'Aquela dos olhos negros' , artista: 'Banda Corpo E Alma'},
+{id: 80020, musica: 'Bandida' , artista: 'Banda Corpo E Alma'},
+{id: 80021, musica: 'Katchaqueira' , artista: 'Banda Corpo E Alma'},
+{id: 80022, musica: 'Alô meu amor' , artista: 'Banda Corpo E Alma'},
+{id: 80023, musica: 'Olhos negros/Katchaqueira/Alô meu amor' , artista: 'Banda Corpo E Alma'}
 ];
