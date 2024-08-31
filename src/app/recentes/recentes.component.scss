@@ -1,0 +1,115 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.class-codigo{
+  width: 60px;
+  border-right:2px solid #4D8DFF
+}
+
+.class-nome{
+  font-weight: bold;
+  font-size: 16px;
+}
+.line {
+  flex: 1;
+}
+.class-musica{
+  width: 80%;
+  padding-left: 5px;
+}
+.class-artista{
+  font-size: 12px;
+  color: #51555AFF;
+}
+
+.class-titulo-codigo{
+  font-size: 10px;
+  color: #51555AFF;
+  height: 20px;
+}
+
+
+.hospital_list {
+  min-height: 1200px;
+  overflow-y: scroll;
+}
+
+.hospital_list-min {
+  max-height: 800px;
+  overflow-y: scroll;
+  //border: solid 1px #FFF000;
+}
+
+ion-searchbar.custom {
+  --background: #d4e1f7;
+  --color: #000000;
+  --placeholder-color: #000000;
+  --icon-color: #000000;
+  --clear-button-color: #000000;
+  --border-radius: 4px;
+}
+
+ion-searchbar.ios.custom {
+  --cancel-button-color: #19422d;
+}
+
+ion-searchbar.md.custom {
+  --cancel-button-color: #fff;
+}
+
+
+.class-btn-buscar{
+  width: 45px;
+  height: 40px;
+}
+.titulo{
+  text-align: center;
+  margin: 20px 46px 30px 20px;
+
+}
+.label-titulo{
+  color: #4D8DFF;
+  font-size: 18px;
+  font-weight: bold !important;
+}
+
+.hr{
+  border-bottom:1px solid #DCDCDC;
+}
+main {
+  display: flex;
+  div {
+    &:first-child {
+      width: 100%;
+    }
+    &:last-child {
+      width: 20%;
+    }
+  }
+}

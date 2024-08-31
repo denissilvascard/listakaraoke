@@ -3,30 +3,11 @@
     <ion-buttons slot="start" style="width: 50px">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-<!--    <ion-title>{{ folder }}-->
-<!--    </ion-title>-->
-
-
-
     <main>
       <ion-searchbar animated="true" placeholder="Buscar"  [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" (keyup.enter)="filtr()" class="custom"></ion-searchbar>
-<!--      <div>-->
-<!--        <ion-searchbar animated="true" placeholder="Buscar"  [(ngModel)]="campoPesquisa" (ionInput)="clearPesdquisa()" (keyup.enter)="filtr()" class="custom"></ion-searchbar>-->
-<!--      </div>-->
-<!--      <div>-->
-<!--        <ion-button color="primary" (click)="filtr()" class="class-btn-buscar"><ion-icon name="search-outline"></ion-icon></ion-button>-->
-<!--      </div>-->
     </main>
-
-
   </ion-toolbar>
 </ion-header>
-
-
-
-
-
-
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense" style="padding-top: 10px;">
@@ -36,14 +17,14 @@
   </ion-header>
 
 
-<!--    <strong class="capitalize">{{ folder }}</strong>-->
-    <strong class="capitalize"></strong>
+
+
     <div *ngIf="folder=='Lista' || folder=='Lista de Musíca'">
 
 
 
      <div class="titulo">
-        <ion-label class="label-titulo"> Lista de Musíca</ion-label>
+        <ion-label class="label-titulo"> Lista de Música</ion-label>
      </div>
 
 
@@ -63,10 +44,6 @@
                       <div class="class-nome"><ion-icon name="musical-notes-sharp"></ion-icon> {{hero.musica}}</div>
                       <div class="class-artista">Artista: {{hero.artista}}</div>
                     </div>
-                    <!--              <div class="plan-right">-->
-                    <!--                <div><ion-icon name="musical-notes-sharp"></ion-icon>-->
-                    <!--                </div>-->
-                    <!--              </div>-->
                   </ion-row>
                 </ion-grid>
               </ion-item>
