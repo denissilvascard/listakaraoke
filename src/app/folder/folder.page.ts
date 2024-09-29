@@ -43,46 +43,39 @@ export class FolderPage implements OnInit {
  }
 
  clearPesdquisa(){
+   if(this.campoPesquisa.length==0){
 
-   if(this.campoPesquisa.length >2){
-     this.buscaNome = this.campoPesquisa;
-     this.removeAcento (this.buscaNome);
-     this.filtrarPessoas();
-   }else if(this.campoPesquisa.length==0){
-      this.buscaNome ='';
-      this.generateItems();
-    }
+     this.buscaNome ='';
+     this.generateItems();
+   }
+
  }
   filtrarPessoas(): Hero[] {
+    if (!this.buscaNome) {
+      return this.items;
+    }
     let itemsMusica = [];
     let itemsArtista = [];
     let itemsGeral = [];
 
 
 
-    if(this.buscaNome.length >2){
-      const buscaNomeLower = this.buscaNome.toLowerCase().trim();
-      itemsMusica = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
-        this.removeAcento(musica.musica.toLowerCase()).includes(this.removeAcento(buscaNomeLower))
-      );
-
-      itemsArtista = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
-        this.removeAcento(musica.artista.toLowerCase()).includes(this.removeAcento(buscaNomeLower))
-      );
-
-      itemsMusica.forEach(m => {
-        itemsGeral.push(m)
-      });
-
-      itemsArtista.forEach(a => {
-        itemsGeral.push(a)
-      });
-      this.totalRegistros = itemsGeral.length;
-      this.totalRegistros = itemsGeral.length;
-      return itemsGeral;
-    }else{
-      return this.items;
-    }
+    const buscaNomeLower = this.buscaNome.toLowerCase().trim();
+    itemsMusica = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
+      this.removeAcento(musica.musica.toLowerCase()).includes(this.removeAcento(buscaNomeLower))
+    );
+    itemsArtista = HEROES.sort((a,b) => a.musica.localeCompare(b.musica)).filter(musica =>
+      this.removeAcento(musica.artista.toLowerCase()).includes(this.removeAcento(buscaNomeLower))
+    );
+    itemsMusica.forEach(m => {
+      console.log(m)
+      itemsGeral.push(m)
+    });
+    itemsArtista.forEach(a => {
+      itemsGeral.push(a)
+    });
+    this.totalRegistros = itemsGeral.length;
+    return itemsGeral;
   }
 
   private generateItems() {
