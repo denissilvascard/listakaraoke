@@ -5,7 +5,7 @@ import {RecentesComponent} from "./recentes/recentes.component";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Lista',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
