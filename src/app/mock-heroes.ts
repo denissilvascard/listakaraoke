@@ -38526,5 +38526,14 @@ export const HEROES: Hero[] = [
 {id: 80025, musica: 'Bluesman' , artista: 'Baco Exu do Blues'},
 {id: 80026, musica: 'P do Pecado' , artista: 'Grupo Menos É Mais, Simone Mendes'},
 {id: 80027, musica: 'Coração Partido' , artista: 'Grupo Menos É Mais'},
-{id: 80028, musica: 'Página de Amigos / Inevitável / Flor' , artista: 'Grupo Menos É Mais'}
+{id: 80028, musica: 'Página de Amigos / Inevitável / Flor' , artista: 'Grupo Menos É Mais'},
+{id: 80029, musica: 'Olha Onde Eu Tô' , artista: 'Ana Castela'},
+{id: 80030, musica: 'Dona' , artista: 'Luan Santana'},
+{id: 80031, musica: 'Vagabundo' , artista: 'Gusttavo Lima, Luis Fonsi'},
+{id: 80032, musica: 'Haverá Sinais' , artista: 'Jorge e Mateus, Lauana Prado'},
+{id: 80033, musica: 'Kamasutra' , artista: 'Lauana Prado'},
+{id: 80034, musica: 'Modo Homem' , artista: 'Lauana Prado'},
+{id: 80035, musica: 'Olho Marrom' , artista: 'Luan Santana'},
+{id: 80036, musica: 'Retrovisor' , artista: 'Gusttavo Lima'},
+{id: 80037, musica: 'Tubarões' , artista: 'Diego e Victor Hugo'}
 ];
